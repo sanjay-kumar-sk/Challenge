@@ -12,6 +12,7 @@ public class FileUtils {
 
     /**
      * Read the file specified and transform in to Data model
+     *
      * @param fileName File to be read and transform
      * @return List of transformed data.
      * @throws IOException
@@ -25,6 +26,7 @@ public class FileUtils {
 
     /**
      * Transform input string to Data.
+     *
      * @param input
      * @return
      */
@@ -33,8 +35,16 @@ public class FileUtils {
         if (details.length != 6) {
             return null;
         }
-        String duration = details[5].substring(0, details[5].indexOf('s'));
-        return new Data(Integer.parseInt(details[0]), Integer.parseInt(details[1]), details[2], details[3],
-                details[4], Integer.parseInt(duration));
+        Data data = null;
+        try {
+            String duration = details[5].substring(0, details[5].indexOf('s'));
+            data = new Data(Integer.parseInt(details[0]), Integer.parseInt(details[1]), details[2], details[3],
+                    details[4], Integer.parseInt(duration));
+
+        } catch (Exception e) {
+
+        }
+
+        return data;
     }
 }

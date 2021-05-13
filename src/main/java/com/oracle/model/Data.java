@@ -58,4 +58,9 @@ public class Data {
     public int hashCode() {
         return Objects.hash(customerId, contractId, geoZone, teamCode, projectCode, buildDuration);
     }
+
+    public boolean isValid() {
+        return this.customerId > 0 && this.contractId > 0 && !this.geoZone.isEmpty()
+                && !this.projectCode.isEmpty() && !this.teamCode.isEmpty() && this.buildDuration > 0;
+    }
 }

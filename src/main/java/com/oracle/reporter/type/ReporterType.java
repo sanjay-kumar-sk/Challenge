@@ -1,0 +1,8 @@
+package com.oracle.reporter.type;
+
+public enum ReporterType {
+    CONTRACT_ID_UNIQUE_CUSTOMER_ID_COUNT,
+    GEO_ZONE_UNIQUE_CUSTOMER_ID_COUNT,
+    GEO_ZONE_UNIQUE_CUSTOMER_IDS,
+    GEO_ZONE_AVG_BUILD_DURATION
+}
